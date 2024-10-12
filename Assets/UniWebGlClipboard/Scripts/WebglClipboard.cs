@@ -1,12 +1,10 @@
-#if UNITY_WEBGL && !UNITY_EDITOR
 using System.Runtime.InteropServices;
-#endif
 
 namespace UniWebGlClipboard
 {
-#if UNITY_WEBGL && !UNITY_EDITOR
     public class WebglClipboard
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")]
         private static extern void sendToClipboard(string str);
 
@@ -14,6 +12,6 @@ namespace UniWebGlClipboard
         {
             sendToClipboard(str);
         }
-    }
 #endif
+    }
 }
