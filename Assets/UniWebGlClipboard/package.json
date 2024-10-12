@@ -1,0 +1,13 @@
+{
+  "name": "com.arty-f.uniwebglclipboard",
+  "displayName": "UniWebGlClipboard",
+  "author": { "name": "arty-F" },
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Library for sending text to browser clipboard.",
+  "keywords": [ "Unity webgl clipboard" ],
+  "license": "MIT",
+  "documentationUrl": "https://github.com/arty-F/UniWebGlClipboard",
+  "changelogUrl": "https://github.com/arty-F/UUniWebGlClipboard/releases",
+  "licensesUrl": "https://github.com/arty-F/UniWebGlClipboard?tab=MIT-1-ov-file#readme"
+}
