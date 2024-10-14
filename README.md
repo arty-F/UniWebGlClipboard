@@ -16,7 +16,9 @@ WebglClipboard.SendToClipboard("you text");
 ```
 In order to work in the editor and WebGL build use these:
 ```csharp
-  GUIUtility.systemCopyBuffer = _message;
+using UniWebGlClipboard;
+...
+  GUIUtility.systemCopyBuffer = "you text";
 #if UNITY_WEBGL && !UNITY_EDITOR
   WebglClipboard.SendToClipboard(GUIUtility.systemCopyBuffer);
 #endif
