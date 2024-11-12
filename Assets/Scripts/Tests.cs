@@ -8,10 +8,7 @@ public class Tests : MonoBehaviour
 
     void Start()
     {
-        GUIUtility.systemCopyBuffer = _message;
-#if UNITY_WEBGL && !UNITY_EDITOR
-            WebglClipboard.SendToClipboard(GUIUtility.systemCopyBuffer);
-#endif
+        WebglClipboard.SendToClipboard(_message);
         Debug.Log($"\"{_message}\" are copied to clipboard");
     }
 }
