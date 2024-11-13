@@ -1,6 +1,6 @@
 # UniWebGlClipboard
 
-Library for sending text to browser clipboard.
+Library for working with clipboard from Unity Webgl build.
 
 # Install from git URL
 
