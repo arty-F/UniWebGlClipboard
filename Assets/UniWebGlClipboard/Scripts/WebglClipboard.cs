@@ -1,6 +1,8 @@
+#if UNITY_WEBGL && !UNITY_EDITOR
 using AOT;
-using System;
 using System.Runtime.InteropServices;
+#endif
+using System;
 using UnityEngine;
 
 namespace UniWebGlClipboard
