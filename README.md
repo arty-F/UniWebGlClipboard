@@ -14,12 +14,3 @@ Download the latest `.unitypackage` file from [releases](https://github.com/arty
 ```csharp
 WebglClipboard.SendToClipboard("you text");
 ```
-In order to work in the editor and WebGL build use these:
-```csharp
-using UniWebGlClipboard;
-...
-  GUIUtility.systemCopyBuffer = "you text";
-#if UNITY_WEBGL && !UNITY_EDITOR
-  WebglClipboard.SendToClipboard(GUIUtility.systemCopyBuffer);
-#endif
-```
