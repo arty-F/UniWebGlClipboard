@@ -7,7 +7,7 @@ namespace UniWebGlClipboard
 {
     public class WebglClipboard
     {
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")]
         private static extern void sendToClipboard(string str);
 
@@ -20,11 +20,7 @@ namespace UniWebGlClipboard
         public static void SendToClipboard(string str)
         {
             GUIUtility.systemCopyBuffer = str;
-#if UNITY_WEBGL
-            if (Application.isEditor)
-            {
-                return;
-            }
+#if UNITY_WEBGL && !UNITY_EDITOR
             sendToClipboard(str);
 #endif
         }
@@ -34,11 +30,12 @@ namespace UniWebGlClipboard
 #if UNITY_WEBGL && !UNITY_EDITOR
             _userCallback = callback;
             readFromClipboard(ReadClipboardCallback);
-#endif
+#else
             callback.Invoke(GUIUtility.systemCopyBuffer);
+#endif
         }
 
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         [MonoPInvokeCallback(typeof(Action<string>))]
         public static void ReadClipboardCallback(string message)
         {
